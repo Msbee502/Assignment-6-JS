@@ -19,7 +19,7 @@ const words = [
   //Function that selects a random word from the array
   function addWordToDOM(){
     //Random index
-    const randomWord = math.floor(math.random() * words.length);
+    const randomWord = Math.floor(Math.random() * words.length);
     //Select a word from the array using randomWord
     const selectedWord = words[randomWord];
     //Display selected word
@@ -41,12 +41,35 @@ function updateScore(){
 //     • increment time by 5 seconds 
 //     • reset the input to empty string
 
-.addEventListener( function(){
+text.addEventListener("input", function(e) {
+    
 
+    if (input === addWordToDOM){
+    updateScore();
+    addWordToDOM(); 
+    input = "";
+    time= +5;
+    }
 })
 
+// PART 2
+// Counting down - timer
+// Create a updateTime function, every time it runs it should decrement 1 from the timer
+// Create  a gameOver function that will open once the timer hits zero
 
+function Timer(){
+time=--; //räknar ner med en sekund
 
+timeContainer.innerText = `${time}s`;
+if (time === 0){
+    gameOver();
+}
+
+}
+
+function startGame (){
+
+}
 
 
 // const input = document.querySelector("input");
